@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <title>Ứng Dụng Quản Lý Sinh Viên</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Ứng Dụng Quản Lý Sinh Viên</h1> 
+        </header>
+        <main>
+            <!-- Khu vực nhập thông tin -->
+            <section class="form-container">
+                <input id="name" type="text" placeholder="Nhập Họ Và Tên">
+                <input id="studentId" type="text" placeholder="Mã Sinh Viên">
+                <input id="score" type="number" step="0.1" min="0" max="10" placeholder="Điểm">
+                <input id="className" type="text" placeholder="Lớp">
+                <input id="btnAdd" type="button" value="Thêm Sinh Viên">
+            </section>
+
+            <!-- Bộ lọc xếp loại -->
+            <section class="filter-container">
+                <label for="rank">Xếp Loại Sinh Viên:</label>
+                <select id="rank" name="rank">
+                    <option value="all">Tất Cả</option>
+                    <option value="gioi">Giỏi</option>
+                    <option value="kha">Khá</option>
+                    <option value="trungBinh">Trung Bình</option>
+                </select>
+            </section>
+
+            <!-- Khu vực bảng danh sách -->
+            <section class="list-container">
+                <h3>Danh Sách Sinh Viên</h3>
+                <table border="1" id="studentTable">
+                    <thead>
+                        <tr>
+                            <th>Mã SV</th>
+                            <th>Họ và Tên</th>
+                            <th>Lớp</th>
+                            <th>Điểm</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody id="studentTableBody">
+                        <tr>
+                            <td>SV01</td>
+                            <td>Nguyễn Minh Khang</td>
+                            <td>CNTT1</td>
+                            <td>8.5</td>
+                            <td><input type="button" value="Xóa" onclick="deleteRow(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>SV02</td>
+                            <td>Trần Thảo Linh</td>
+                            <td>CNTT2</td>
+                            <td>7.0</td>
+                            <td><input type="button" value="Xóa" onclick="deleteRow(this)"></td>
+                        </tr>
+                        <tr>
+                            <td>SV03</td>
+                            <td>Lê Hoàng Nam</td>
+                            <td>CNTT1</td>
+                            <td>6.5</td>
+                            <td><input type="button" value="Xóa" onclick="deleteRow(this)"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <div class="stats-container">
+                <p>Tổng số sinh viên: <span id="totalStudents">0</span></p>
+                <p>Điểm trung bình: <span id="avgScore">0.0</span></p>
+            </div>
+        </main>
+        <footer>
+
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
